@@ -1,0 +1,3643 @@
+/* ============================================================
+   HANSUNG UNIVERSITY — CUSTOM CSS
+   Navy #1b3a5c | Gold #b8860b | White #ffffff | Gray #f5f5f0
+   Fonts: Playfair Display (display) + Source Sans 3 (body)
+   ============================================================ */
+
+/* ========================
+   CSS CUSTOM PROPERTIES
+======================== */
+:root {
+  --uni-primary: #1b3a5c;
+  --uni-primary-dark: #112540;
+  --uni-primary-light: #2a517f;
+  --uni-accent: #b8860b;
+  --uni-accent-light: #d4a017;
+  --uni-white: #ffffff;
+  --uni-light-gray: #f5f5f0;
+  --uni-mid-gray: #e8e8e2;
+  --uni-text-dark: #1a1a1a;
+  --uni-text-muted: #666666;
+  --uni-text-light: #999999;
+  --uni-border: #ddd;
+  --uni-shadow: rgba(27, 58, 92, 0.12);
+  --uni-shadow-hover: rgba(27, 58, 92, 0.22);
+  --uni-transition: 0.3s ease;
+  --uni-radius: 4px;
+  --uni-radius-lg: 8px;
+}
+
+/* ========================
+   GLOBAL RESET & BASE
+======================== */
+.uni-app *,
+.uni-app *::before,
+.uni-app *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.uni-app {
+  font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--uni-text-dark);
+  background: var(--uni-white);
+}
+
+.uni-app h1,
+.uni-app h2,
+.uni-app h3,
+.uni-app h4,
+.uni-app h5 {
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.25;
+}
+
+.uni-app a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--uni-transition);
+}
+
+.uni-app img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.uni-app ul {
+  list-style: none;
+}
+
+/* ========================
+   LAYOUT UTILITIES
+======================== */
+.uni-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.uni-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.uni-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.uni-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ========================
+   SECTION BASE
+======================== */
+.uni-section {
+  padding: 5rem 0;
+}
+
+.uni-section-light {
+  background: var(--uni-white);
+}
+
+.uni-section-gray {
+  background: var(--uni-light-gray);
+}
+
+.uni-section-navy {
+  background: var(--uni-primary);
+  color: var(--uni-white);
+}
+
+.uni-section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.uni-section-navy .uni-section-title {
+  color: var(--uni-white);
+}
+
+.uni-section-subtitle {
+  font-size: 1.1rem;
+  color: var(--uni-text-muted);
+  text-align: center;
+  margin-bottom: 3.5rem;
+  font-weight: 400;
+}
+
+.uni-section-navy .uni-section-subtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.uni-section-divider {
+  width: 56px;
+  height: 3px;
+  background: var(--uni-accent);
+  margin: 0.75rem auto 3rem;
+  border-radius: 2px;
+}
+
+/* ========================
+   BUTTONS
+======================== */
+.uni-btn {
+  display: inline-block;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: var(--uni-radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--uni-transition);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.uni-btn-primary {
+  background: var(--uni-accent);
+  color: var(--uni-white);
+  border-color: var(--uni-accent);
+}
+
+.uni-btn-primary:hover {
+  background: var(--uni-accent-light);
+  border-color: var(--uni-accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 134, 11, 0.35);
+  color: var(--uni-white);
+}
+
+.uni-btn-outline {
+  background: transparent;
+  color: var(--uni-white);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.uni-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--uni-white);
+  color: var(--uni-white);
+}
+
+.uni-btn-outline-navy {
+  background: transparent;
+  color: var(--uni-primary);
+  border-color: var(--uni-primary);
+}
+
+.uni-btn-outline-navy:hover {
+  background: var(--uni-primary);
+  color: var(--uni-white);
+}
+
+.uni-btn-sm {
+  font-size: 0.85rem;
+  padding: 0.55rem 1.4rem;
+}
+
+/* ========================
+   CARDS
+======================== */
+.uni-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  transition: all var(--uni-transition);
+  box-shadow: 0 2px 8px var(--uni-shadow);
+}
+
+.uni-card:hover {
+  box-shadow: 0 10px 30px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+  border-color: var(--uni-accent);
+}
+
+.uni-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: var(--uni-mid-gray);
+}
+
+.uni-card-img-placeholder {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(
+    135deg,
+    var(--uni-primary) 0%,
+    var(--uni-primary-light) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.uni-card-body {
+  padding: 1.5rem;
+}
+
+.uni-card-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+  margin-bottom: 0.5rem;
+}
+
+.uni-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.uni-card-text {
+  font-size: 0.95rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.uni-card-date {
+  font-size: 0.82rem;
+  color: var(--uni-text-light);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.uni-card-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--uni-transition), gap var(--uni-transition);
+}
+
+.uni-card-link:hover {
+  color: var(--uni-accent);
+  gap: 0.7rem;
+}
+
+/* Icon cards (research, quick access) */
+.uni-icon-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all var(--uni-transition);
+  cursor: pointer;
+}
+
+.uni-icon-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 8px 24px var(--uni-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.uni-icon-card-icon {
+  font-size: 2rem;
+  color: var(--uni-accent);
+  margin-bottom: 1rem;
+}
+
+.uni-icon-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  margin-bottom: 0.5rem;
+}
+
+.uni-icon-card-text {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.55;
+}
+
+/* ========================
+   HEADER
+======================== */
+.uni-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  transition: all var(--uni-transition);
+  padding: 1rem 0;
+}
+
+.uni-header-transparent {
+  background: transparent;
+}
+
+.uni-header-solid {
+  background: var(--uni-primary);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  border-bottom: 3px solid var(--uni-accent);
+  padding: 0.6rem 0;
+}
+
+.uni-header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo */
+.uni-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.uni-logo-mark {
+  width: 44px;
+  height: 44px;
+  background: var(--uni-accent);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--uni-white);
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.uni-logo-text-primary {
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--uni-white);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.uni-logo-text-sub {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Source Sans 3", sans-serif;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
+/* Navigation */
+.uni-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+}
+
+.uni-nav-item {
+  position: relative;
+}
+
+.uni-nav-link {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: var(--uni-radius);
+  transition: color var(--uni-transition), background var(--uni-transition);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.uni-nav-link:hover,
+.uni-nav-link.active {
+  color: var(--uni-accent);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.uni-nav-link .chevron {
+  font-size: 0.6rem;
+  transition: transform var(--uni-transition);
+}
+
+.uni-nav-item:hover .uni-nav-link .chevron {
+  transform: rotate(180deg);
+}
+
+/* Mega Menu / Dropdown */
+.uni-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  background: var(--uni-white);
+  border-radius: var(--uni-radius-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  min-width: 220px;
+  padding: 0.75rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.22s ease;
+  border-top: 3px solid var(--uni-accent);
+  z-index: 9001;
+}
+
+.uni-nav-item:hover .uni-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.uni-dropdown a {
+  display: block;
+  padding: 0.65rem 1.5rem;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.9rem;
+  color: var(--uni-text-dark);
+  transition: all 0.18s ease;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+}
+
+.uni-dropdown a:hover {
+  background: var(--uni-light-gray);
+  color: var(--uni-primary);
+  border-left-color: var(--uni-accent);
+  padding-left: 1.75rem;
+}
+
+/* Header actions */
+.uni-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.uni-icon-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.85);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--uni-radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all var(--uni-transition);
+}
+
+.uni-icon-btn:hover {
+  border-color: var(--uni-accent);
+  color: var(--uni-accent);
+  background: rgba(184, 134, 11, 0.08);
+}
+
+.uni-lang-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--uni-radius);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all var(--uni-transition);
+}
+
+.uni-lang-btn:hover {
+  border-color: var(--uni-accent);
+  color: var(--uni-accent);
+}
+
+/* Apply button in header */
+.uni-apply-btn {
+  background: var(--uni-accent);
+  color: var(--uni-white);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--uni-radius);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all var(--uni-transition);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.uni-apply-btn:hover {
+  background: var(--uni-accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.35);
+  color: var(--uni-white);
+}
+
+/* Hamburger */
+.uni-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.4rem;
+}
+
+.uni-hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--uni-white);
+  transition: all var(--uni-transition);
+  border-radius: 2px;
+}
+
+.uni-hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.uni-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.uni-hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu */
+.uni-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--uni-primary);
+  z-index: 8999;
+  padding: 6rem 2rem 2rem;
+  overflow-y: auto;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.uni-mobile-menu.open {
+  display: flex;
+}
+
+.uni-mobile-menu a {
+  display: block;
+  color: var(--uni-white);
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: color var(--uni-transition);
+}
+
+.uni-mobile-menu a:hover {
+  color: var(--uni-accent);
+}
+
+/* ========================
+   HERO SLIDER
+======================== */
+.uni-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.uni-hero .swiper,
+.uni-hero .swiper-wrapper,
+.uni-hero .swiper-slide {
+  height: 100%;
+}
+
+.uni-hero-slide {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.uni-hero-bg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.uni-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 37, 64, 0.55) 0%,
+    rgba(17, 37, 64, 0.72) 60%,
+    rgba(17, 37, 64, 0.88) 100%
+  );
+}
+
+.uni-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  padding: 2rem;
+}
+
+.uni-hero-badge {
+  display: inline-block;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+  border: 1.5px solid var(--uni-accent);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  background: rgba(184, 134, 11, 0.08);
+}
+
+.uni-hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--uni-white);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.uni-hero-text {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.uni-hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Swiper navigation override */
+.uni-hero .swiper-button-next,
+.uni-hero .swiper-button-prev {
+  color: var(--uni-white);
+  width: 48px;
+  height: 48px;
+  background: rgba(27, 58, 92, 0.55);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all var(--uni-transition);
+}
+
+.uni-hero .swiper-button-next:hover,
+.uni-hero .swiper-button-prev:hover {
+  background: var(--uni-accent);
+  border-color: var(--uni-accent);
+}
+
+.uni-hero .swiper-button-next::after,
+.uni-hero .swiper-button-prev::after {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.uni-hero .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+  width: 10px;
+  height: 10px;
+}
+
+.uni-hero .swiper-pagination-bullet-active {
+  background: var(--uni-accent);
+  width: 28px;
+  border-radius: 5px;
+}
+
+/* ========================
+   NEWS SECTION
+======================== */
+.uni-news-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  transition: all var(--uni-transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.uni-news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px var(--uni-shadow-hover);
+  border-color: var(--uni-accent);
+}
+
+.uni-news-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.uni-news-card-img-placeholder {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.uni-news-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.uni-news-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+  margin-bottom: 0.5rem;
+}
+
+.uni-news-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.uni-news-excerpt {
+  font-size: 0.9rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.uni-news-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--uni-text-light);
+}
+
+.uni-news-readmore {
+  color: var(--uni-primary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color var(--uni-transition), gap var(--uni-transition);
+}
+
+.uni-news-readmore:hover {
+  color: var(--uni-accent);
+  gap: 0.6rem;
+}
+
+/* ========================
+   ANNOUNCEMENTS
+======================== */
+.uni-notices-list {
+  background: var(--uni-white);
+  border-radius: var(--uni-radius-lg);
+  border: 1px solid var(--uni-border);
+  overflow: hidden;
+}
+
+.uni-notice-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 1.75rem;
+  border-bottom: 1px solid var(--uni-mid-gray);
+  transition: background var(--uni-transition);
+  cursor: pointer;
+}
+
+.uni-notice-item:last-child {
+  border-bottom: none;
+}
+
+.uni-notice-item:hover {
+  background: var(--uni-light-gray);
+}
+
+.uni-notice-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--uni-accent);
+  flex-shrink: 0;
+}
+
+.uni-notice-title {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--uni-text-dark);
+  line-height: 1.4;
+}
+
+.uni-notice-date {
+  font-size: 0.82rem;
+  color: var(--uni-text-light);
+  flex-shrink: 0;
+}
+
+/* ========================
+   RESEARCH
+======================== */
+.uni-research-feature {
+  background: linear-gradient(
+    135deg,
+    var(--uni-primary) 0%,
+    var(--uni-primary-light) 100%
+  );
+  border-radius: var(--uni-radius-lg);
+  padding: 3rem;
+  color: var(--uni-white);
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.uni-research-feature-icon {
+  font-size: 3.5rem;
+  color: var(--uni-accent);
+  flex-shrink: 0;
+}
+
+.uni-research-feature-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--uni-white);
+}
+
+.uni-research-feature-text {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+/* ========================
+   ADMISSIONS BANNER
+======================== */
+.uni-admissions-banner {
+  background: linear-gradient(
+    135deg,
+    var(--uni-primary-dark) 0%,
+    var(--uni-primary) 50%,
+    var(--uni-primary-light) 100%
+  );
+  border-radius: var(--uni-radius-lg);
+  padding: 4rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  color: var(--uni-white);
+}
+
+.uni-admissions-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--uni-white);
+}
+
+.uni-admissions-text {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.uni-admissions-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+
+.uni-stat {
+  text-align: right;
+}
+
+.uni-stat-number {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--uni-accent);
+  line-height: 1;
+}
+
+.uni-stat-label {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ========================
+   CAMPUS LIFE
+======================== */
+.uni-campus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+}
+
+.uni-campus-feature {
+  grid-row: span 2;
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  position: relative;
+  min-height: 480px;
+}
+
+.uni-campus-sm {
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  position: relative;
+  min-height: 224px;
+}
+
+.uni-campus-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uni-campus-img-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Campus overview placeholder (CampusLifePage overview section) */
+.uni-campus-overview-placeholder {
+  background: linear-gradient(
+    135deg,
+    var(--uni-primary) 0%,
+    var(--uni-primary-dark) 100%
+  );
+  border-radius: 12px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.uni-campus-overview-icon {
+  font-size: 4rem;
+  color: rgba(184, 134, 11, 0.7);
+}
+
+.uni-campus-overview-caption {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+/* Gallery item background colors */
+.uni-gallery-item-1 {
+  background: var(--uni-primary);
+}
+.uni-gallery-item-2 {
+  background: var(--uni-primary-light);
+}
+.uni-gallery-item-3 {
+  background: var(--uni-primary-dark);
+}
+.uni-gallery-item-4 {
+  background: #1a3050;
+}
+.uni-gallery-item-5 {
+  background: #1f2d4a;
+}
+.uni-gallery-item-6 {
+  background: #162238;
+}
+
+.uni-campus-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.5rem 1.5rem;
+  background: linear-gradient(
+    to top,
+    rgba(17, 37, 64, 0.9) 0%,
+    transparent 100%
+  );
+  color: var(--uni-white);
+}
+
+.uni-campus-caption-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.uni-campus-caption-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ========================
+   GLOBAL PROGRAMS
+======================== */
+.uni-global-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all var(--uni-transition);
+}
+
+.uni-global-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 8px 24px var(--uni-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.uni-global-card-flag {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.uni-global-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  margin-bottom: 0.5rem;
+}
+
+.uni-global-card-partners {
+  font-size: 0.85rem;
+  color: var(--uni-text-muted);
+}
+
+.uni-global-stat {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.uni-global-stat-number {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--uni-accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.uni-global-stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+/* ========================
+   EVENTS
+======================== */
+.uni-event-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-radius: var(--uni-radius-lg);
+  border: 1px solid var(--uni-border);
+  background: var(--uni-white);
+  transition: all var(--uni-transition);
+  cursor: pointer;
+}
+
+.uni-event-item:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 6px 20px var(--uni-shadow);
+  transform: translateX(4px);
+}
+
+.uni-event-date-box {
+  background: var(--uni-primary);
+  color: var(--uni-white);
+  border-radius: var(--uni-radius);
+  padding: 0.75rem 1rem;
+  text-align: center;
+  min-width: 68px;
+  flex-shrink: 0;
+}
+
+.uni-event-date-day {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.uni-event-date-month {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+  margin-top: 0.25rem;
+}
+
+.uni-event-body {
+  flex: 1;
+}
+
+.uni-event-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+.uni-event-meta {
+  font-size: 0.85rem;
+  color: var(--uni-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ========================
+   QUICK ACCESS
+======================== */
+.uni-quick-access {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.uni-quick-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem;
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  cursor: pointer;
+  transition: all var(--uni-transition);
+  text-decoration: none;
+}
+
+.uni-quick-item:hover {
+  border-color: var(--uni-accent);
+  background: rgba(184, 134, 11, 0.04);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px var(--uni-shadow);
+}
+
+.uni-quick-item-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--uni-light-gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--uni-primary);
+  transition: all var(--uni-transition);
+}
+
+.uni-quick-item:hover .uni-quick-item-icon {
+  background: var(--uni-primary);
+  color: var(--uni-accent);
+}
+
+.uni-quick-item-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ========================
+   FOOTER
+======================== */
+.uni-footer {
+  background: var(--uni-primary-dark);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 4.5rem 0 0;
+}
+
+.uni-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.uni-footer-brand h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--uni-white);
+  margin-bottom: 0.25rem;
+}
+
+.uni-footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+
+.uni-footer-col h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--uni-accent);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.03em;
+}
+
+.uni-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.uni-footer-col ul li {
+  margin-bottom: 0.7rem;
+}
+
+.uni-footer-col ul li a {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--uni-transition);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.uni-footer-col ul li a:hover {
+  color: var(--uni-accent);
+}
+
+.uni-footer-contact p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.5;
+}
+
+.uni-footer-contact p i {
+  color: var(--uni-accent);
+  font-size: 0.9rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.uni-footer-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.uni-footer-social a {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--uni-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  transition: all var(--uni-transition);
+  text-decoration: none;
+}
+
+.uni-footer-social a:hover {
+  background: var(--uni-accent);
+  border-color: var(--uni-accent);
+  color: var(--uni-white);
+}
+
+.uni-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.uni-footer-bottom a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color var(--uni-transition);
+}
+
+.uni-footer-bottom a:hover {
+  color: var(--uni-accent);
+}
+
+/* ========================
+   PAGE HERO (subpages)
+======================== */
+.uni-page-hero {
+  background: linear-gradient(
+    135deg,
+    var(--uni-primary-dark) 0%,
+    var(--uni-primary) 100%
+  );
+  padding: 8rem 0 5rem;
+  color: var(--uni-white);
+  text-align: center;
+}
+
+.uni-page-hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--uni-white);
+  margin-bottom: 1rem;
+}
+
+.uni-page-hero-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.uni-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.uni-breadcrumb a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--uni-transition);
+  text-decoration: none;
+}
+
+.uni-breadcrumb a:hover {
+  color: var(--uni-accent);
+}
+
+.uni-breadcrumb-sep {
+  color: var(--uni-accent);
+}
+
+/* ========================
+   MISC UTILITIES
+======================== */
+.uni-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(184, 134, 11, 0.1);
+  color: var(--uni-accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  margin-bottom: 0.75rem;
+}
+
+.uni-tag-navy {
+  background: rgba(27, 58, 92, 0.08);
+  color: var(--uni-primary);
+  border-color: rgba(27, 58, 92, 0.2);
+}
+
+.uni-divider {
+  height: 1px;
+  background: var(--uni-border);
+  margin: 3rem 0;
+}
+
+.uni-text-accent {
+  color: var(--uni-accent);
+}
+.uni-text-navy {
+  color: var(--uni-primary);
+}
+.uni-text-muted {
+  color: var(--uni-text-muted);
+}
+
+/* ========================
+   HERO (SWIPER)
+======================== */
+.uni-hero-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.uni-hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================
+   SECTION CTA WRAPPER
+======================== */
+.uni-section-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+/* ========================
+   NEWS CARDS (UPDATED)
+======================== */
+.uni-news-card-strip {
+  height: 5px;
+  background: var(--uni-primary);
+  flex-shrink: 0;
+}
+
+.uni-news-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.uni-news-date {
+  font-size: 0.8rem;
+  color: var(--uni-text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ========================
+   ANNOUNCEMENTS (UPDATED)
+======================== */
+.uni-notice-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.75rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  border-bottom: 1px solid var(--uni-mid-gray);
+  transition: background var(--uni-transition);
+  font-family: inherit;
+}
+
+.uni-notice-row:last-of-type {
+  border-bottom: none;
+}
+
+.uni-notice-row:hover {
+  background: #eeeee8;
+}
+
+.uni-notice-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.uni-notice-tag-admissions {
+  background: rgba(27, 58, 92, 0.1);
+  color: var(--uni-primary);
+  border: 1px solid rgba(27, 58, 92, 0.25);
+}
+
+.uni-notice-tag-academic {
+  background: rgba(46, 112, 46, 0.1);
+  color: #2e702e;
+  border: 1px solid rgba(46, 112, 46, 0.25);
+}
+
+.uni-notice-tag-aid {
+  background: rgba(184, 134, 11, 0.1);
+  color: var(--uni-accent);
+  border: 1px solid rgba(184, 134, 11, 0.25);
+}
+
+.uni-notice-tag-campus {
+  background: rgba(100, 60, 140, 0.1);
+  color: #64388c;
+  border: 1px solid rgba(100, 60, 140, 0.25);
+}
+
+.uni-notice-tag-research {
+  background: rgba(180, 40, 40, 0.1);
+  color: #b42828;
+  border: 1px solid rgba(180, 40, 40, 0.25);
+}
+
+.uni-notice-title {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--uni-text-dark);
+  line-height: 1.4;
+}
+
+.uni-notice-date {
+  font-size: 0.8rem;
+  color: var(--uni-text-light);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.uni-notice-arrow {
+  font-size: 0.75rem;
+  color: var(--uni-accent);
+  transition: transform var(--uni-transition);
+  flex-shrink: 0;
+}
+
+.uni-notice-row:hover .uni-notice-arrow {
+  transform: rotate(90deg);
+}
+
+.uni-notice-row.open .uni-notice-arrow {
+  transform: rotate(180deg);
+}
+
+.uni-notice-detail {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+  padding: 0 1.75rem;
+  background: #eeeee8;
+}
+
+.uni-notice-detail p {
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+  border-top: 1px solid var(--uni-mid-gray);
+}
+
+/* ========================
+   RESEARCH CARDS (NAVY BG)
+======================== */
+.uni-research-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--uni-radius-lg);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all var(--uni-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.uni-research-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--uni-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.uni-research-card-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--uni-accent);
+  border-radius: var(--uni-radius-lg) var(--uni-radius-lg) 0 0;
+}
+
+.uni-research-card-icon {
+  font-size: 2rem;
+  color: var(--uni-accent);
+  margin-top: 0.5rem;
+}
+
+.uni-research-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--uni-white);
+  line-height: 1.3;
+}
+
+.uni-research-card-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.uni-research-dept {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.uni-btn-outline-gold {
+  background: transparent;
+  color: var(--uni-accent);
+  border-color: var(--uni-accent);
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+.uni-btn-outline-gold:hover {
+  background: var(--uni-accent);
+  color: var(--uni-white);
+  border-color: var(--uni-accent);
+}
+
+/* ========================
+   ADMISSIONS (UPDATED)
+======================== */
+.uni-admissions-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 3rem;
+  border: 1px solid var(--uni-mid-gray);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+}
+
+.uni-admissions-stat-block {
+  flex: 1;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-right: 1px solid var(--uni-mid-gray);
+  background: var(--uni-white);
+}
+
+.uni-admissions-stat-block:last-child {
+  border-right: none;
+}
+
+.uni-admissions-stat-num {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--uni-primary);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.uni-admissions-stat-num::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--uni-accent);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.uni-admissions-stat-label {
+  font-size: 0.82rem;
+  color: var(--uni-text-muted);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.uni-admissions-cta-grid {
+  margin-top: 1rem;
+}
+
+.uni-admissions-cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 1.5rem;
+  background: var(--uni-primary);
+  border: 2px solid var(--uni-primary);
+  border-radius: var(--uni-radius-lg);
+  cursor: pointer;
+  transition: all var(--uni-transition);
+  text-decoration: none;
+  color: var(--uni-white);
+}
+
+.uni-admissions-cta-card:hover {
+  border-color: var(--uni-accent);
+  background: var(--uni-primary-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(27, 58, 92, 0.35);
+}
+
+.uni-admissions-cta-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--uni-white);
+  transition: all var(--uni-transition);
+}
+
+.uni-admissions-cta-card:hover .uni-admissions-cta-icon {
+  background: var(--uni-accent);
+  border-color: var(--uni-accent);
+}
+
+.uni-admissions-cta-label {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--uni-white);
+  text-align: center;
+}
+
+/* ========================
+   CAMPUS LIFE CARDS (UPDATED)
+======================== */
+.uni-campus-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  transition: all var(--uni-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.uni-campus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px var(--uni-shadow-hover);
+  border-color: var(--uni-accent);
+}
+
+.uni-campus-card-img-area {
+  height: 180px;
+  background: linear-gradient(
+    135deg,
+    var(--uni-primary) 0%,
+    var(--uni-primary-light) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.uni-campus-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.uni-campus-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  line-height: 1.3;
+}
+
+.uni-campus-card-desc {
+  font-size: 0.9rem;
+  color: var(--uni-text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* ========================
+   GLOBAL REGION CARDS
+======================== */
+.uni-global-region-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--uni-radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all var(--uni-transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.uni-global-region-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--uni-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.uni-global-region-icon {
+  font-size: 2rem;
+  color: var(--uni-accent);
+  margin-bottom: 0.25rem;
+}
+
+.uni-global-region-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--uni-white);
+}
+
+.uni-global-region-count {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.uni-global-region-explore {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--uni-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  text-decoration: none;
+  transition: gap var(--uni-transition), color var(--uni-transition);
+}
+
+.uni-global-region-explore:hover {
+  gap: 0.6rem;
+  color: var(--uni-accent-light);
+}
+
+.uni-global-footer-text {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+}
+
+/* ========================
+   EVENTS CARDS (UPDATED)
+======================== */
+.uni-event-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  transition: all var(--uni-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.uni-event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px var(--uni-shadow-hover);
+  border-color: var(--uni-accent);
+}
+
+.uni-event-date-block {
+  background: var(--uni-primary);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.uni-event-month {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+}
+
+.uni-event-day {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--uni-white);
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+
+.uni-event-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.uni-event-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  line-height: 1.35;
+}
+
+.uni-event-card-meta {
+  font-size: 0.82rem;
+  color: var(--uni-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.uni-event-card-meta i {
+  color: var(--uni-accent);
+  margin-right: 0.3rem;
+}
+
+.uni-event-card-desc {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* ========================
+   AOS OVERRIDES
+======================== */
+[data-aos] {
+  pointer-events: none;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 1100px) {
+  .uni-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .uni-nav,
+  .uni-header-actions {
+    display: none;
+  }
+  .uni-hamburger {
+    display: flex;
+  }
+  .uni-admissions-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .uni-admissions-stats {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .uni-stat {
+    text-align: center;
+  }
+  .uni-campus-grid {
+    grid-template-columns: 1fr;
+  }
+  .uni-campus-feature {
+    grid-row: span 1;
+    min-height: 300px;
+  }
+  .uni-research-feature {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  .uni-admissions-stats-row {
+    flex-wrap: wrap;
+  }
+  .uni-admissions-stat-block {
+    flex: 1 1 calc(50% - 1px);
+    min-width: 140px;
+  }
+  .uni-notice-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .uni-section {
+    padding: 3.5rem 0;
+  }
+  .uni-section-title {
+    font-size: 1.75rem;
+  }
+  .uni-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .uni-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .uni-hero-title {
+    font-size: 1.9rem;
+  }
+  .uni-hero-subtitle {
+    font-size: 1rem;
+  }
+  .uni-quick-access {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .uni-notice-date {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .uni-container {
+    padding: 0 1rem;
+  }
+  .uni-quick-access {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .uni-hero-btns {
+    flex-direction: column;
+  }
+  .uni-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .uni-admissions-stat-block {
+    flex: 1 1 calc(50% - 1px);
+  }
+  .uni-btn-outline-gold {
+    width: auto;
+  }
+}
+
+/* ============================================================
+   SUBPAGE-SPECIFIC COMPONENTS
+   Stats Bar, Timeline, Leader Cards, Program Cards,
+   Accordion, Tables, Research, Campus Life, International
+   ============================================================ */
+
+/* ========================
+   STATS BAR
+======================== */
+.uni-stats-bar {
+  background: var(--uni-primary);
+  padding: 2.75rem 0;
+  border-bottom: 3px solid var(--uni-accent);
+}
+
+.uni-stats-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.uni-stats-bar-item {
+  position: relative;
+}
+
+.uni-stats-bar-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.uni-stats-bar-number {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--uni-accent);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.uni-stats-bar-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ========================
+   TIMELINE (About page)
+======================== */
+.uni-timeline {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.uni-timeline-item {
+  display: grid;
+  grid-template-columns: 80px 40px 1fr;
+  gap: 0 1.5rem;
+  min-height: 80px;
+}
+
+.uni-timeline-year {
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--uni-accent);
+  padding-top: 0.25rem;
+  text-align: right;
+  line-height: 1;
+}
+
+.uni-timeline-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.uni-timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--uni-accent);
+  border: 3px solid var(--uni-light-gray);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.uni-timeline-line {
+  flex: 1;
+  width: 2px;
+  background: var(--uni-mid-gray);
+  margin: 4px 0;
+}
+
+.uni-timeline-content {
+  padding-bottom: 2rem;
+}
+
+.uni-timeline-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  margin-bottom: 0.4rem;
+}
+
+.uni-timeline-text {
+  font-size: 0.92rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+}
+
+/* ========================
+   LEADER CARDS (About)
+======================== */
+.uni-leader-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all var(--uni-transition);
+}
+
+.uni-leader-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 8px 28px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.uni-leader-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--uni-primary),
+    var(--uni-primary-light)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 1.8rem;
+  color: var(--uni-accent);
+}
+
+.uni-leader-role {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+  margin-bottom: 0.5rem;
+}
+
+.uni-leader-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.uni-leader-bio {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+}
+
+/* ========================
+   CARD HELPERS
+======================== */
+.uni-card-padded {
+  padding: 2.5rem;
+}
+
+.uni-card-icon-top {
+  font-size: 2rem;
+  color: var(--uni-accent);
+  margin-bottom: 1rem;
+}
+
+.uni-card-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  color: var(--uni-primary);
+  margin-bottom: 0.75rem;
+}
+
+.uni-card-paragraph {
+  color: var(--uni-text-muted);
+  line-height: 1.75;
+  font-size: 0.96rem;
+}
+
+/* ========================
+   TEXT / LAYOUT UTILITIES
+======================== */
+.uni-text-center {
+  text-align: center;
+}
+
+.uni-intro-paragraph {
+  font-size: 1.08rem;
+  color: var(--uni-text-muted);
+  line-height: 1.8;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.uni-subheading {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  margin-bottom: 1rem;
+}
+
+.uni-subheading-small {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.uni-body-paragraph {
+  font-size: 0.96rem;
+  color: var(--uni-text-muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.uni-cta-btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+/* ========================
+   PROGRAM CARDS (Admissions)
+======================== */
+.uni-program-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2rem 1.75rem;
+  text-align: center;
+  transition: all var(--uni-transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.uni-program-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 10px 30px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.uni-program-card-icon {
+  font-size: 2rem;
+  color: var(--uni-accent);
+  margin-bottom: 0.5rem;
+}
+
+.uni-program-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  line-height: 1.3;
+}
+
+.uni-program-card-count {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+}
+
+.uni-program-card-desc {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 0.5rem;
+}
+
+/* ========================
+   PROCESS TIMELINE (Admissions)
+======================== */
+.uni-process-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.uni-process-step {
+  text-align: center;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.uni-process-step-num {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--uni-primary);
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.uni-process-connector {
+  position: absolute;
+  top: 78px;
+  left: calc(50% + 28px);
+  right: calc(-50% + 28px);
+  height: 2px;
+  background: var(--uni-mid-gray);
+  z-index: 0;
+}
+
+.uni-process-step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--uni-primary);
+  color: var(--uni-accent);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  position: relative;
+  z-index: 1;
+  border: 3px solid var(--uni-light-gray);
+  box-shadow: 0 4px 12px var(--uni-shadow);
+}
+
+.uni-process-step-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.uni-process-step-desc {
+  font-size: 0.85rem;
+  color: var(--uni-text-muted);
+  line-height: 1.6;
+}
+
+/* ========================
+   ACCORDION (Admissions)
+======================== */
+.uni-accordion {
+  max-width: 780px;
+  margin: 0 auto;
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  background: var(--uni-white);
+}
+
+.uni-accordion-item {
+  border-bottom: 1px solid var(--uni-mid-gray);
+}
+
+.uni-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.uni-accordion-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--uni-transition);
+}
+
+.uni-accordion-trigger:hover {
+  background: var(--uni-light-gray);
+}
+
+.uni-accordion-item.open .uni-accordion-trigger {
+  background: rgba(27, 58, 92, 0.04);
+}
+
+.uni-accordion-trigger-icon {
+  color: var(--uni-accent);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.uni-accordion-trigger-label {
+  flex: 1;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+}
+
+.uni-accordion-trigger-chevron {
+  color: var(--uni-text-muted);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  transition: color var(--uni-transition);
+}
+
+.uni-accordion-item.open .uni-accordion-trigger-chevron {
+  color: var(--uni-accent);
+}
+
+.uni-accordion-body {
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.uni-accordion-body-inner {
+  padding: 0 1.75rem 1.5rem 4rem;
+  font-size: 0.93rem;
+  color: var(--uni-text-muted);
+  line-height: 1.72;
+}
+
+/* ========================
+   DEADLINES TABLE
+======================== */
+.uni-deadlines-table-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--uni-border);
+}
+
+.uni-deadlines-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.uni-deadlines-table thead tr {
+  background: var(--uni-primary);
+}
+
+.uni-deadlines-table thead th {
+  color: var(--uni-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+
+.uni-deadlines-table tbody tr {
+  border-bottom: 1px solid var(--uni-mid-gray);
+  background: var(--uni-white);
+  transition: background var(--uni-transition);
+}
+
+.uni-deadlines-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.uni-deadlines-table tbody tr:nth-child(even) {
+  background: var(--uni-light-gray);
+}
+
+.uni-deadlines-table tbody tr:hover {
+  background: rgba(27, 58, 92, 0.04);
+}
+
+.uni-deadlines-table td {
+  padding: 1rem 1.5rem;
+  font-size: 0.93rem;
+  color: var(--uni-text-dark);
+}
+
+.uni-deadline-type {
+  font-weight: 600;
+  color: var(--uni-primary);
+}
+
+.uni-deadline-date {
+  font-weight: 700;
+  color: var(--uni-accent);
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+}
+
+.uni-deadline-decision {
+  color: var(--uni-text-muted);
+}
+
+/* ========================
+   CONTACT BOX
+======================== */
+.uni-contact-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--uni-radius-lg);
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.uni-contact-box-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.uni-contact-box-item i {
+  color: var(--uni-accent);
+  font-size: 1rem;
+}
+
+.uni-contact-box-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ========================
+   COLLEGE CARDS (Academics)
+======================== */
+.uni-college-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2rem;
+  transition: all var(--uni-transition);
+}
+
+.uni-college-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 10px 30px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.uni-college-card-icon {
+  font-size: 1.8rem;
+  color: var(--uni-accent);
+  margin-bottom: 1rem;
+}
+
+.uni-college-card-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.uni-college-card-programs {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+  margin-bottom: 0.75rem;
+}
+
+.uni-college-card-desc {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+}
+
+/* ========================
+   HIGHLIGHT BLOCKS (Academics)
+======================== */
+.uni-highlight-block {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all var(--uni-transition);
+}
+
+.uni-highlight-block:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 8px 24px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.uni-highlight-block-icon {
+  font-size: 2rem;
+  color: var(--uni-accent);
+  margin-bottom: 1rem;
+}
+
+.uni-highlight-block-stat {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--uni-primary);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.uni-highlight-block-label {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  margin-bottom: 0.75rem;
+}
+
+.uni-highlight-block-desc {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+}
+
+/* ========================
+   DEAN QUOTE (Academics)
+======================== */
+.uni-dean-quote {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 3rem;
+  border-left: 5px solid var(--uni-accent);
+  box-shadow: 0 4px 20px var(--uni-shadow);
+}
+
+.uni-dean-quote-mark {
+  font-family: "Playfair Display", serif;
+  font-size: 5rem;
+  color: var(--uni-accent);
+  opacity: 0.3;
+  line-height: 0.7;
+  margin-bottom: 1rem;
+}
+
+.uni-dean-quote-text {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: var(--uni-primary);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.uni-dean-quote-attribution {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.uni-dean-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--uni-primary),
+    var(--uni-primary-light)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--uni-accent);
+  flex-shrink: 0;
+}
+
+.uni-dean-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+}
+
+.uni-dean-title {
+  font-size: 0.85rem;
+  color: var(--uni-text-muted);
+  margin-top: 0.2rem;
+}
+
+/* ========================
+   RESEARCH CENTER CARDS
+======================== */
+.uni-research-center-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--uni-transition);
+}
+
+.uni-research-center-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 10px 30px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.uni-research-center-icon {
+  font-size: 1.8rem;
+  color: var(--uni-accent);
+  margin-bottom: 1rem;
+}
+
+.uni-research-center-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.uni-research-center-dept {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+  margin-bottom: 0.75rem;
+}
+
+.uni-research-center-desc {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+/* ========================
+   RESEARCH OVERVIEW
+======================== */
+.uni-research-overview {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.uni-research-overview-stats {
+  background: var(--uni-primary);
+  border-radius: var(--uni-radius-lg);
+  padding: 2.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+.uni-research-overview-stat-item i {
+  font-size: 1.4rem;
+  color: var(--uni-accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.uni-research-overview-stat-num {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--uni-white);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.uni-research-overview-stat-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+}
+
+.uni-research-overview-text p {
+  font-size: 0.96rem;
+  color: var(--uni-text-muted);
+  line-height: 1.78;
+  margin-bottom: 1.25rem;
+}
+
+/* ========================
+   PROJECT CARDS (Research)
+======================== */
+.uni-project-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2rem;
+  transition: all var(--uni-transition);
+}
+
+.uni-project-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 10px 30px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.uni-project-card-top {
+  margin-bottom: 0.75rem;
+}
+
+.uni-project-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.uni-project-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--uni-text-muted);
+  margin-bottom: 1rem;
+}
+
+.uni-project-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.uni-project-card-meta i {
+  color: var(--uni-accent);
+  font-size: 0.78rem;
+}
+
+.uni-project-card-desc {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+}
+
+/* ========================
+   RESEARCH NEWS
+======================== */
+.uni-research-news-list {
+  display: flex;
+  flex-direction: column;
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+}
+
+.uni-research-news-item {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px solid var(--uni-mid-gray);
+  transition: background var(--uni-transition);
+}
+
+.uni-research-news-item:last-child {
+  border-bottom: none;
+}
+
+.uni-research-news-item:hover {
+  background: var(--uni-light-gray);
+}
+
+.uni-research-news-date {
+  font-size: 0.8rem;
+  color: var(--uni-text-light);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.uni-research-news-title {
+  font-family: "Playfair Display", serif;
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  margin-bottom: 0.3rem;
+  line-height: 1.35;
+}
+
+.uni-research-news-excerpt {
+  font-size: 0.85rem;
+  color: var(--uni-text-muted);
+  line-height: 1.55;
+}
+
+/* ========================
+   CAMPUS OVERVIEW GRID
+======================== */
+.uni-campus-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.uni-campus-overview-text p {
+  font-size: 0.96rem;
+  color: var(--uni-text-muted);
+  line-height: 1.78;
+  margin-bottom: 1.25rem;
+}
+
+/* ========================
+   ORG CATEGORY CARDS
+======================== */
+.uni-org-category-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  transition: all var(--uni-transition);
+  cursor: pointer;
+}
+
+.uni-org-category-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 8px 24px var(--uni-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.uni-org-category-icon {
+  font-size: 1.8rem;
+  color: var(--uni-accent);
+  margin-bottom: 0.75rem;
+}
+
+.uni-org-category-label {
+  font-family: "Playfair Display", serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--uni-primary);
+  line-height: 1.3;
+}
+
+/* ========================
+   ATHLETICS CARDS
+======================== */
+.uni-athletics-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all var(--uni-transition);
+}
+
+.uni-athletics-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 10px 30px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.uni-athletics-card-icon {
+  font-size: 2.2rem;
+  color: var(--uni-accent);
+  margin-bottom: 1rem;
+}
+
+.uni-athletics-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+  margin-bottom: 0.4rem;
+}
+
+.uni-athletics-card-stat {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+  margin-bottom: 0.75rem;
+}
+
+.uni-athletics-card-desc {
+  font-size: 0.88rem;
+  color: var(--uni-text-muted);
+  line-height: 1.65;
+}
+
+/* ========================
+   HOUSING CARDS
+======================== */
+.uni-housing-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  transition: all var(--uni-transition);
+}
+
+.uni-housing-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 10px 30px var(--uni-shadow-hover);
+}
+
+.uni-housing-card-header {
+  background: var(--uni-primary);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.uni-housing-card-icon {
+  font-size: 1.6rem;
+  color: var(--uni-accent);
+}
+
+.uni-housing-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--uni-white);
+}
+
+.uni-housing-card-list {
+  list-style: none;
+  padding: 1.75rem 2rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.uni-housing-card-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.93rem;
+  color: var(--uni-text-dark);
+}
+
+.uni-housing-card-list li i {
+  color: var(--uni-accent);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* ========================
+   TESTIMONIAL CARDS
+======================== */
+.uni-testimonial-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  padding: 2.25rem 2rem;
+  transition: all var(--uni-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.uni-testimonial-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 10px 30px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.uni-testimonial-quote-mark {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  color: var(--uni-accent);
+  opacity: 0.4;
+  line-height: 0.6;
+  margin-bottom: 1rem;
+}
+
+.uni-testimonial-text {
+  font-size: 0.93rem;
+  color: var(--uni-text-muted);
+  line-height: 1.78;
+  flex: 1;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.uni-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-top: 1px solid var(--uni-mid-gray);
+  padding-top: 1.25rem;
+}
+
+.uni-testimonial-flag {
+  font-size: 1.6rem;
+}
+
+.uni-testimonial-name {
+  font-family: "Playfair Display", serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--uni-primary);
+}
+
+.uni-testimonial-meta {
+  font-size: 0.8rem;
+  color: var(--uni-text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ========================
+   GALLERY PLACEHOLDERS
+======================== */
+.uni-gallery-placeholder {
+  border-radius: var(--uni-radius-lg);
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1.25rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--uni-transition);
+}
+
+.uni-gallery-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, transparent 60%);
+}
+
+.uni-gallery-placeholder:hover {
+  transform: scale(1.03);
+}
+
+.uni-gallery-placeholder-label {
+  font-family: "Playfair Display", serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--uni-white);
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================
+   REGION CARDS (International)
+======================== */
+.uni-region-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  transition: all var(--uni-transition);
+}
+
+.uni-region-card:hover {
+  border-color: var(--uni-accent);
+  box-shadow: 0 10px 30px var(--uni-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.uni-region-card-header {
+  padding: 2rem;
+  text-align: center;
+}
+
+.uni-region-card-flag {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.uni-region-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--uni-white);
+  margin-bottom: 0.35rem;
+}
+
+.uni-region-card-partners {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uni-accent);
+}
+
+.uni-region-card-body {
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.uni-region-card-types {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.uni-region-card-types li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--uni-text-dark);
+}
+
+.uni-region-card-types li i {
+  color: var(--uni-accent);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* ========================
+   CHECKLIST
+======================== */
+.uni-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.uni-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--uni-text-muted);
+  line-height: 1.55;
+}
+
+.uni-checklist li i {
+  color: var(--uni-accent);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+/* ========================
+   TIMELINE CARD (International)
+======================== */
+.uni-timeline-card {
+  background: var(--uni-white);
+  border: 1px solid var(--uni-border);
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--uni-shadow);
+}
+
+.uni-timeline-card-title {
+  background: var(--uni-primary);
+  color: var(--uni-accent);
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.uni-timeline-card-step {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 1.75rem;
+  border-bottom: 1px solid var(--uni-mid-gray);
+  transition: background var(--uni-transition);
+}
+
+.uni-timeline-card-step:last-child {
+  border-bottom: none;
+}
+
+.uni-timeline-card-step:hover {
+  background: var(--uni-light-gray);
+}
+
+.uni-timeline-card-step-month {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--uni-accent);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+
+.uni-timeline-card-step-action {
+  font-size: 0.9rem;
+  color: var(--uni-text-dark);
+  line-height: 1.55;
+}
+
+/* ========================
+   PARTNERS TABLE (International)
+======================== */
+.uni-partners-table-wrap {
+  border-radius: var(--uni-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--uni-border);
+}
+
+.uni-partners-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.uni-partners-table thead tr {
+  background: var(--uni-primary);
+}
+
+.uni-partners-table thead th {
+  color: var(--uni-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1rem 1.75rem;
+  text-align: left;
+}
+
+.uni-partners-table tbody tr {
+  border-bottom: 1px solid var(--uni-mid-gray);
+  background: var(--uni-white);
+  transition: background var(--uni-transition);
+}
+
+.uni-partners-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.uni-partners-table tbody tr:nth-child(even) {
+  background: var(--uni-light-gray);
+}
+
+.uni-partners-table tbody tr:hover {
+  background: rgba(27, 58, 92, 0.04);
+}
+
+.uni-partners-country {
+  padding: 1rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.93rem;
+  white-space: nowrap;
+}
+
+.uni-partners-country span {
+  font-size: 1.3rem;
+}
+
+.uni-partners-country strong {
+  color: var(--uni-primary);
+  font-weight: 700;
+}
+
+.uni-partners-unis {
+  padding: 1rem 1.75rem;
+  font-size: 0.9rem;
+  color: var(--uni-text-muted);
+  line-height: 1.5;
+}
+
+/* ========================
+   RESPONSIVE — SUBPAGES
+======================== */
+@media (max-width: 900px) {
+  .uni-stats-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .uni-process-timeline {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .uni-process-connector {
+    display: none;
+  }
+  .uni-research-overview {
+    grid-template-columns: 1fr;
+  }
+  .uni-campus-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .uni-timeline-item {
+    grid-template-columns: 60px 30px 1fr;
+    gap: 0 1rem;
+  }
+  .uni-process-timeline {
+    grid-template-columns: 1fr;
+  }
+  .uni-research-news-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .uni-partners-country {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .uni-stats-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .uni-stats-bar-item:not(:last-child)::after {
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "overview": "A premium original university website inspired by modern Korean academic aesthetics. Features a full-screen hero slider, mega-menu navigation, news, research highlights, admissions, campus life, global programs, events, and six subpages — all in an elegant dark navy and white theme.",
+  "features": [
+    "Fixed transparent header with mega-menu navigation",
+    "Full-screen hero slider with auto-play and fade transitions",
+    "10 homepage sections: news, announcements, research, admissions, campus life, global programs, events, quick links, footer",
+    "6 subpages: About, Admissions, Academics, Research, Campus Life, International",
+    "Responsive design for desktop, tablet, and mobile",
+    "Scroll-reveal animations and smooth hover effects",
+    "Dark navy and white premium academic theme"
+  ],
+  "category": "education",
+  "tags": [
+    "university",
+    "education",
+    "academic",
+    "website",
+    "responsive",
+    "premium",
+    "navy"
+  ],
+  "last_updated": "2026-04-27T16:26:22.704Z"
+}
